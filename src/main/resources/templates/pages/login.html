@@ -1,0 +1,49 @@
+<!--
+    Login page of site.
+
+    Author: Dana Clemmer
+    File: login.html
+    Date: 11/28/2021
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/parts :: meta('Login')"></head>
+
+<body class="text-white">
+<header th:replace="fragments/parts :: navbar"></header>
+
+<div class="background" id="loginBackground">
+    <div class="header" id="formJumbo">
+        <div class="jumbotronText text-center mx-auto">
+            <h1 id="formTitle">Login</h1>
+        </div>
+    </div>
+    <br>
+
+    <div class="login-content mx-auto mb-5 rounded">
+        <p class="flag" th:if="${error != null}" th:text="${error}"></p>
+        <form th:action="@{/pnwAdventures/login}" method="post">
+            <div class="formDiv">
+                <label for="username"><h5 class="info">Username</h5></label>
+                <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+            </div>
+            <br>
+            <div class="formDiv">
+                <label for="password"><h5 class="info">Password</h5></label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+            </div>
+            <div class="mx-auto text-center">
+                <button class="mt-5 rounded border-0" id="loginButton">Login</button>
+            </div>
+            <br>
+            <div class="mx-auto text-center">
+                <p id="signup">Don't have an account? <a class="text-decoration-none" th:href="@{/pnwAdventures/register}"
+                                                        id="signuplink">Sign up</a></p>
+            </div>
+        </form>
+    </div>
+
+    <footer id="loginFooter" th:insert="fragments/parts :: footer"></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,753 @@
+/**
+    Stylesheet for site
+    Author: Dana Clemmer
+    File: styles.html
+     Date: 10/5/2021
+ **/
+
+nav {
+    background-color: #12141d;
+}
+
+.navbar-nav, .navbar-brand {
+    font-family: 'Yaldevi', Helvetica, sans-serif;
+    color: #cfd2d5 !important;
+}
+
+.navbar-brand {
+    font-family: 'Patrick Hand', Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.display-6 {
+    font-family: 'Patrick Hand', Helvetica, sans-serif;
+
+}
+
+@media (max-width: 345px) {
+    .navbar-brand {
+        font-size: 20px;
+    }
+}
+
+.nav-link {
+    color: #cfd2d5 !important;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+#logo {
+    width: 50px;
+}
+
+body {
+    background-color: #12141d !important;
+}
+
+#brand-name {
+    color: #ff4e00;
+}
+
+.jumbotronText {
+    width: 90%;
+}
+
+#regions {
+    font-family: 'Patrick Hand', Helvetica, sans-serif;
+    font-size: 60px;
+}
+
+/*Jumbotron responsive design*/
+.jumbotron#jumboIndexPg {
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 100);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../images/jumbotronImg/forest.jfif");
+}
+
+@media (min-width: 815px) {
+    .jumbotron#jumboIndexPg {
+        background-attachment: fixed;
+    }
+}
+
+@media (min-width: 900px) {
+    #adventureImage {
+        width: 50%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+    #adventureImage {
+        width: 75%;
+    }
+}
+
+@media (max-width: 599px) {
+    #adventureImage {
+        width: 100%;
+    }
+}
+
+@media (max-width: 815px) {
+    .jumbotron#jumboIndexPg {
+        background-image: url("../images/jumbotronImg/forestSmallScreen.jfif");
+    }
+}
+
+@media (min-width: 700px) and (max-width: 910px) {
+    .jumbotron#jumboIndexPg {
+        background-image: url("../images/jumbotronImg/forestSmallScreen1.jfif");
+    }
+}
+
+@media (min-width: 815px) and (max-width: 910px) and (min-height: 583px) and (max-height: 800px) {
+    .jumbotron#jumboIndexPg {
+        background-image: url("../images/jumbotronImg/size1.jpg");
+    }
+}
+
+@media (min-width: 815px) and (max-width: 910px) and (min-height: 800px) {
+    .jumbotron#jumboIndexPg {
+        background-image: url("../images/jumbotronImg/size2.jpg");
+    }
+}
+
+@media (min-width: 910px) and (max-width: 1100px) {
+    .jumbotron#jumboIndexPg {
+        background-image: url("../images/jumbotronImg/size4.jpg");
+    }
+}
+
+@media (min-width: 1100px) and (max-width: 1400px) and (min-height: 582px) {
+    .jumbotron#jumboIndexPg {
+        background-image: url("../images/jumbotronImg/size5.jpg");
+    }
+}
+
+@media (min-width: 1400px) {
+    .jumbotron#jumboIndexPg {
+        background-image: url("../images/jumbotronImg/size6.jpg");
+    }
+}
+
+@media (min-width: 2000px) {
+    .jumbotron#jumboIndexPg {
+        background-image: url("../images/jumbotronImg/size7.jpg");
+    }
+}
+
+/*Responsive styles for content*/
+#openingMessage {
+    font-family: 'Birthstone Bounce', Helvetica, sans-serif;
+    font-size: 110px;
+}
+
+@media (max-width: 775px) {
+    #openingMessage {
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 700px) {
+    .jumbotron#jumboIndexPg {
+        text-align: center;
+    }
+}
+
+@media (max-width: 550px) {
+    #openingMessage {
+        font-size: 86px;
+    }
+
+    .display-6 {
+        font-size: 2rem;
+    }
+
+    #introIndiv {
+        font-size: 1.7em;
+    }
+
+    #advDestination {
+        font-size: 1.65em;
+    }
+
+    #location {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 400px) {
+    #openingMessage {
+        font-size: 75px;
+    }
+
+    .display-6 {
+        font-size: 1.7rem;
+    }
+
+    #intro1 {
+        font-size: 1.5rem;
+    }
+
+    #intro2 {
+        font-size: 1.4rem;
+    }
+
+    .info {
+        font-size: 1.1rem;
+    }
+
+    #regions {
+        font-size: 47px;
+    }
+
+    .centered {
+        font-size: 45px;
+    }
+
+    #getStarted {
+        font-size: 25px;
+    }
+
+    #switchView {
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 325px) {
+    #openingMessage {
+        font-size: 64px;
+    }
+}
+
+/* Centered text in images */
+.centered {
+    font-family: 'Covered By Your Grace', Helvetica, sans-serif;
+    text-shadow: 4px 4px 1px rgb(0 0 0);
+    margin: 0;
+}
+
+@media (min-width: 400px) {
+    .centered {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 415px) and (max-width: 575px) {
+    .container-fluid, #itineraryItems {
+        width: 80%;
+    }
+}
+
+@media (max-width: 575px) {
+    .container-fluid {
+        margin: auto;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1190px) {
+    .centered {
+        font-size: 45px;
+    }
+}
+
+.container-card {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    padding: 7%;
+}
+
+#map {
+    width: 40%;
+}
+
+#mistyroad {
+    width: 85%;
+    display: none;
+}
+
+@media (min-width: 992px)  {
+    #mistyroad {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+    form {
+        margin: auto;
+    }
+}
+
+#intro1 {
+    padding-bottom: 5px;
+}
+
+@media (max-width: 800px) {
+    #map {
+        display: none;
+    }
+}
+
+#regions {
+    padding-top: 1em;
+}
+
+@media (min-width: 1600px) {
+    #regions {
+        padding-top: 2em;
+    }
+}
+
+#olympicPen {
+    background-image: url("../images/holeInWall.jpg");
+}
+
+#north {
+    background-image: url("../images/DiabloLake.jpg");
+}
+
+#central {
+    background-image: url("../images/colchuck.jpg");
+}
+
+#south {
+    background-image: url("../images/rainier.jpg");
+}
+
+#sound {
+    background-image: url("../images/seattle.jpg");
+}
+
+#oregon {
+    background-image: url("../images/cannonBeach.jpg");
+}
+
+#gorge {
+    background-image: url("../images/gorge.jpg");
+}
+
+#getStarted {
+    /*color: #11cc9e;*/
+    /*color: #756cff;*/
+    color: #ff4e00;
+    font-size: 30px;
+    font-family: 'Patrick Hand', Helvetica, sans-serif;
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.1);
+}
+
+#getStarted:hover {
+    /*color: #35ffcd;*/
+    /*color: #9790ff;*/
+    color: #b13d09;
+}
+
+.copyright-text {
+    color: #bdb7b7;
+    font-size: 14px;
+    margin: 0;
+    padding: 18px;
+}
+
+footer {
+    background-color: #12141d;
+}
+
+.jumboPgs {
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 100);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url("../images/misty-forest.jpg");
+}
+
+@media (min-width: 991px) {
+    #itinerary {
+        height: 10em !important;
+    }
+}
+
+@media (min-width: 351px) and (max-width: 575px) {
+    #itinerary {
+        height: 8em !important;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 991px) {
+    #itinerary {
+        height: 8em !important;
+    }
+}
+
+#itinerary {
+    overflow: auto;
+    height: 11em;
+}
+
+@media (max-width: 1000px) {
+    #consumerTable {
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
+
+    #consumerTable td, #consumerTable th {
+        overflow: auto;
+    }
+}
+
+@media (max-width: 800px) {
+    table {
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
+
+    td, th {
+        overflow: auto;
+        white-space: nowrap;
+    }
+}
+
+#consumerTable th, #consumerTable td {
+    border: solid 1px #666;
+    padding: 5px 10px;
+}
+
+th, td {
+    border: solid 1px #666;
+    padding: 10px 15px;
+}
+
+#itineraryCol {
+    width: 40%;
+}
+
+#summTable th {
+    font-size: 22px;
+}
+
+#summTable td {
+    font-size: 18px;
+}
+
+@media (min-width: 1225px) {
+    th#destination {
+        width: 50%;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1225px) {
+    th#destination {
+        width: 40%;
+    }
+}
+
+@media (max-width: 900px) {
+    th#destination {
+        width: 30%;
+    }
+
+    th#tableRegions {
+        width: 25%;
+    }
+}
+
+@media (max-width: 720px) {
+    th {
+        font-size: 17px;
+    }
+
+    td {
+        font-size: 13px;
+    }
+}
+
+tr:nth-child(odd) {
+    background-color: #123338ed;
+}
+
+tr:nth-child(even) {
+    background-color: #005966ad;
+}
+
+#tableHeaders {
+    background-color: #212529;
+}
+
+#adventureView {
+    background-color: #ff4e00 !important;
+    width: 60px;
+    color: white;
+    position: absolute;
+    margin-left: -41px;
+    left: 53%;
+    bottom: 13px;
+}
+
+#adventureView:hover {
+    text-decoration: none;
+    background-color: #ff824b !important;
+}
+
+#formButton, #registerButton, #loginButton {
+    width: 8em;
+    font-size: 21px;
+    color: white;
+    font-family: 'Patrick Hand', Helvetica, sans-serif;
+}
+
+#formButton {
+    background-color: #008564;
+}
+
+#formButton:hover {
+    background-color: #46a38c;
+}
+
+#registerButton, #loginButton {
+    background-color: #ff4e00;
+    width: 6em;
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.1);
+}
+
+#registerButton:hover, #loginButton:hover {
+    background-color: #b13d09;
+}
+
+#loginButton {
+    width: 100%;
+}
+
+#signup {
+    color: #e4e2e2;
+    margin-bottom: 0;
+}
+
+#signuplink {
+    color: #4afcd0;
+}
+
+#signuplink:hover {
+    color: #39cca8;
+}
+
+.tableLinks {
+    color: #ff4e00 !important;
+}
+
+.tableLinks:hover {
+    text-decoration: none;
+    color: #ff824b !important;
+}
+
+.adventures, .fields, #itineraryItems {
+    background-color: #212529;
+}
+
+#switchView, #linkToCreate {
+    color: #11cc9e;
+    font-size: 23px;
+    font-family: 'Patrick Hand', Helvetica, sans-serif;
+}
+
+#switchView:hover, #linkToCreate:hover {
+    color: #008564;
+}
+
+#edit {
+    color: #11cc9e;
+    font-size: 21px;
+    font-family: 'Patrick Hand', Helvetica, sans-serif;
+}
+
+#edit:hover {
+    color: #11cc9e82;
+}
+
+.mapMarker {
+    color: #ff4e00;
+}
+
+ul {
+    list-style: none;
+    padding: inherit;
+}
+
+li {
+    font-size: 20px;
+    padding: 3px;
+}
+
+.header {
+    font-family: 'Patrick Hand', Helvetica, sans-serif;
+    padding: 2rem 1rem;
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 100);
+}
+
+#formTitle {
+    font-size: 5em;
+}
+
+#dashTitle {
+    font-size: 5em;
+    color: black;
+    text-shadow: 4px 4px 3px rgba(193, 193, 193, 100);
+}
+
+@media (min-width: 594px) {
+    .title {
+        margin-top: 41px;
+        margin-bottom: 41px;
+        font-size: 5em;
+    }
+}
+
+@media (max-width: 593px) {
+    .title {
+        font-size: 4em;
+    }
+}
+
+.flag {
+    color: red;
+}
+
+.content, .form-content, .summaryContent {
+    margin: 30px;
+    font-family: 'Yaldevi', Helvetica, sans-serif;
+}
+
+.login-content, .register-content{
+    margin-bottom: 30px;
+    font-family: 'Yaldevi', Helvetica, sans-serif;
+
+}
+
+.logout {
+    color: #ff4e00d4!important;
+}
+
+.logout:hover {
+    color: #ff4e00!important;
+}
+
+.content {
+    width: 93%;
+}
+
+.form-content {
+    width: 85%;
+}
+
+@media (min-width: 1200px) {
+    .content {
+        width: 75%;
+    }
+}
+
+.summaryContent {
+    width: 93%;
+    margin-bottom: 0;
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+    .summaryContent {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1500px) {
+    .summaryContent {
+        width: 75%;
+    }
+}
+
+.register-content, .login-content {
+    padding: 60px;
+    width: 85%;
+    /*text-shadow: 2px 2px 2px rgba(0, 0, 0, 100);*/
+    background-color: #3c3c3cad;
+}
+
+@media (min-width: 576px) {
+    .register-content {
+        width: 65%;
+    }
+    .formDiv {
+        padding-bottom: 3px;
+    }
+    .login-content {
+        width: 30em;
+    }
+    #loginButton {
+        width: 17em;
+        height: 38px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .register-content {
+        width: 50%;
+    }
+}
+
+@media (max-width: 950px) {
+    .formInput {
+        width: 100%;
+        float: none;
+    }
+}
+
+@media (min-width: 951px) {
+    .formInput {
+        width: 60%;
+        display: inline;
+        float: right;
+    }
+}
+
+.background, .dashBackground {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.background {
+    background-image: url("../images/van.jpg");
+}
+
+@media (min-height: 800px) {
+    .background#loginBackground {
+        position: relative;
+        min-height: 93vh;
+    }
+    #loginFooter {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+@media (min-height: 1000px) {
+    .background#registerBackground {
+        position: relative;
+        min-height: 93vh;
+    }
+    footer#registerFooter {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+.dashBackground {
+    background-image: url("../images/mountains.jfif");
+}
+
+@media (min-width: 1100px) {
+    .background {
+        background-image: url("../images/vanShortWindow.jpg");
+    }
+}

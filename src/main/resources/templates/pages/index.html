@@ -1,0 +1,90 @@
+<!--
+    Index/Home page of site.
+
+    Author: Dana Clemmer
+    File: index.html
+    Date: 10/5/2021
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/parts :: meta('PNW Adventures')"></head>
+
+<body class="text-white">
+<header th:replace="fragments/parts :: navbar"></header>
+
+<div class="jumbotron jumbotron-fluid" id="jumboIndexPg">
+    <div class="jumbotronText text-center mx-auto">
+        <h1 id="openingMessage">Adventure Awaits!</h1>
+        <h1 class="display-6">Your PNW Adventure Planner</h1>
+    </div>
+</div>
+<div class="content mx-auto mb-5">
+    <img class="pb-3 float-right" id="map" src="../images/adventuremap.png" alt="Adventure Map">
+    <h3 class="pt-2" id="intro1">Ready to hit the road and explore the Pacific Northwest (PNW)?
+        Whether you're just visiting or have lived in the PNW forever and are ready for an adventure in the area, <span
+                class="font-weight-bold" id="brand-name">PNW Adventures</span> is the site
+        for you! Plan your next adventure right here, right now.</h3>
+    <br>
+    <h5 class="info">Between the mountains, the ocean and the Puget Sound, the PNW holds countless exciting
+        adventures. If you're in need of a way to organize and keep track of all your PNW adventure ideas, you are in
+        the right place! </h5>
+    <br>
+    <h5 class="info">You'll be able to plan as many adventures as you want, and maintain them through this site.
+        Explore the North Cascades, the Washington West Coast, the Olympic Peninsula... you name it!</h5>
+
+    <h1 class="text-center" id="regions">Regions</h1>
+    <div class="container-fluid form-row">
+        <div class="form-group col-lg-3 col-md-6 col-sm-6">
+            <div class="container-card shadow" id="olympicPen">
+                <h3 class="centered text-center text-white">Olympic</h3>
+                <h3 class="centered text-center text-white">Peninsula</h3>
+            </div>
+        </div>
+        <div class="form-group col-lg-3 col-md-6 col-sm-6">
+            <div class="container-card shadow" id="sound">
+                <h3 class="centered text-center text-white">Puget</h3>
+                <h3 class="centered text-center text-white">Sound</h3>
+            </div>
+        </div>
+        <div class="form-group col-lg-3 col-md-6 col-sm-6">
+            <div class="container-card shadow" id="north">
+                <h3 class="centered text-center text-white">North</h3>
+                <h3 class="centered text-center text-white">Cascades</h3>
+            </div>
+        </div>
+        <div class="form-group col-lg-3 col-md-6 col-sm-6">
+            <div class="container-card shadow" id="central">
+                <h3 class="centered text-center text-white">Central</h3>
+                <h3 class="centered text-center text-white">Cascades</h3>
+            </div>
+        </div>
+        <div class="form-group col-lg-3 col-md-6 col-sm-6">
+            <div class="container-card shadow" id="south">
+                <h3 class="centered text-center text-white">South</h3>
+                <h3 class="centered text-center text-white">Cascades</h3>
+            </div>
+        </div>
+        <div class="form-group col-lg-3 col-md-6 col-sm-6">
+            <div class="container-card shadow" id="gorge">
+                <h3 class="centered text-center text-white">Col. River</h3>
+                <h3 class="centered text-center text-white">Gorge</h3>
+            </div>
+        </div>
+        <div class="form-group col-lg-3 col-md-6 col-sm-6">
+            <div class="container-card shadow" id="oregon">
+                <h3 class="centered text-center text-white">Oregon</h3>
+                <h3 class="centered text-center text-white">Coast</h3>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="mx-auto text-center">
+        <a class="text-decoration-none" id="getStarted" th:href="@{/pnwAdventures/createAdventure}"><b>Let's Get Started!
+            &#8594;</b></a>
+    </div>
+</div>
+
+<footer th:replace="fragments/parts :: footer"></footer>
+</body>
+</html>

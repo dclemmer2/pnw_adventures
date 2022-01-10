@@ -1,0 +1,95 @@
+<!--
+    Form page of site for adding and updating adventures.
+
+    Author: Dana Clemmer
+    File: individual-adventure.html
+    Date: 10/16/2021
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/parts :: meta('Adventure Viewer')"></head>
+
+<body class="text-white">
+<header th:replace="fragments/parts :: navbar"></header>
+
+<div class="jumboPgs header">
+    <div class="jumbotronText text-center mx-auto">
+        <h1 class="title">Adventure Viewer</h1>
+    </div>
+</div>
+
+<div class="content mx-auto pb-5">
+    <h2 class="text-center font-weight-bold pb-5" id="introIndiv">Get Ready for Your
+        <span id="brand-name" th:text="${adventure.destination}"></span> Adventure!
+    </h2>
+    <div class="text-center">
+        <div th:if="${adventure.imagePath != null}">
+            <img class="rounded" id="adventureImage" th:src="${adventure.imagePath}" alt="adventure image">
+        </div>
+        <h1 class="pt-3"><span class="fas fa-map-marker-alt mapMarker"></span></h1>
+        <h3 id="advDestination"><span th:text="${adventure.destination}"></span></h3>
+        <h5 id="location"><span th:text="${adventure.region}"></span>, <span th:text="${adventure.state}"></span></h5>
+        <br>
+
+        <div class="container-fluid form-row pb-4">
+            <div class="form-group col-lg-3 col-md-3 col-sm-6">
+                <div class="card h-100 fields">
+                    <div class="card-body">
+                        <h2><span class="fas fa-hiking"></span></h2>
+                        <h4>Hikes Included?</h4>
+                        <p class="mb-0"><span th:if="${adventure.hikeIncluded == false}">No</span><span
+                                th:if="${adventure.hikeIncluded == true}">Yes</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-lg-3 col-md-3 col-sm-6">
+                <div class="card h-100 fields">
+                    <div class="card-body">
+                        <h2><span class="fas fa-umbrella-beach"></span></h2>
+                        <h4>Beach Included?</h4>
+                        <p class="mb-0"><span th:if="${adventure.beachIncluded == false}">No</span><span
+                                th:if="${adventure.beachIncluded == true}">Yes</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-lg-3 col-md-3 col-sm-6">
+                <div class="card h-100 fields">
+                    <div class="card-body">
+                        <h2><span class="fas fa-campground"></span></h2>
+                        <h4>Camping Included?</h4>
+                        <p class="mb-0"><span th:if="${adventure.campIncluded == false}">No</span><span
+                                th:if="${adventure.campIncluded == true}">Yes</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-lg-3 col-md-3 col-sm-6">
+                <div class="card h-100 fields">
+                    <div class="card-body">
+                        <h2><span class="fas fa-water"></span></h2>
+                        <h4>Waterfalls Included?</h4>
+                        <p class="mb-0"><span th:if="${adventure.waterfallIncluded == false}">No</span><span
+                                th:if="${adventure.waterfallIncluded == true}">Yes</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card h-100 mx-auto form-group col-lg-5 col-md-6 col-sm-6" id="itineraryItems">
+            <div class="card-body">
+                <h1><span class="fas fa-map-marked-alt"></span></h1>
+                <h3>Itinerary: </h3>
+                <ul>
+                    <li th:each="item : ${adventure.itineraryToList()}" th:text="${item}"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mx-auto">
+            <a class="text-decoration-none" id="edit" th:href="@{'../edit/'+${adventure.adventureId}}"><b><span
+                    class='fas fa-edit'></span>Edit</b></a>
+        </div>
+    </div>
+</div>
+<footer th:replace="fragments/parts :: footer"></footer>
+</body>
+</html>

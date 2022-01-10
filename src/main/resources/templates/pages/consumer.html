@@ -1,0 +1,44 @@
+<!--
+    Consumer pg injected from js file.
+
+    Author: Dana Clemmer
+    File: consumer.html
+    Date: 11/23/2021
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Adventures Data</title>
+    <script src="/js/consumerScript.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--Favicon-->
+    <link rel="icon" th:href="@{/images/pnwLogo.svg}">
+</head>
+<body class="text-white">
+<div class="summaryContent mx-auto pb-5">
+    <h1>Adventures Data</h1>
+    <br>
+    <table class="w-100" id="consumerTable">
+        <thead>
+        <tr id="tableHeaders">
+            <th>ID</th>
+            <th>Destination</th>
+            <th>Region</th>
+            <th>State</th>
+            <th id="itineraryCol">Itinerary</th>
+            <th>Beach Included?</th>
+            <th>Camping Included?</th>
+            <th>Hike Included?</th>
+            <th>Waterfall Included?</th>
+        </tr>
+        </thead>
+        <tbody id="adventures">
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

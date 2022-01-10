@@ -1,0 +1,32 @@
+<!--
+    Adventure ideas page of site.
+
+    Author: Dana Clemmer
+    File: ideas.html
+    Date: 11/4/2021
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/parts :: meta('Adventure Ideas')"></head>
+
+<body class="text-white">
+<header th:replace="fragments/parts :: navbar"></header>
+
+<div class="jumbotron jumbotron-fluid jumboPgs">
+    <div class="jumbotronText text-center mx-auto">
+        <h1 class="text-center pb-3 myAdventuresHeader" id="openingMessage">Adventure Ideas</h1>
+    </div>
+</div>
+<div class="content mx-auto mb-5">
+    <h3 class="text-center" id="intro1">Here you can find a few different PNW Adventure Ideas. Feel free to use them and
+        modify them to your liking!</h3>
+
+
+    <div class="mx-auto text-center">
+        <a class="text-decoration-none" id="getStarted" th:href="@{/pnwAdventures/createAdventure}"><b>Plan an Adventure! &#8594;</b></a>
+    </div>
+</div>
+
+<footer th:replace="fragments/parts :: footer"></footer>
+</body>
+</html>

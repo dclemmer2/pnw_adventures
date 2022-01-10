@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:fragment="meta(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Birthstone Bounce">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Covered By Your Grace">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patrick Hand">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Yaldevi">
+
+    <title th:text="${title}"></title>
+
+    <!--Favicon-->
+    <link rel="icon" th:href="@{/images/pnwLogo.svg}">
+</head>
+
+<body>
+<header th:fragment="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/pnwAdventures/index"><img th:src="@{/images/pnwLogo.svg}" id="logo" alt="PNW Logo"> PNW
+            Adventures</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+<!--                <li class="nav-item ml-auto">-->
+<!--                    <a class="nav-link" th:href="@{/pnwAdventures/index#regions}">Regions</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item ml-auto">-->
+<!--                    <a class="nav-link" th:href="@{/pnwAdventures/ideas}">Adventure Ideas</a>-->
+<!--                </li>-->
+                <li class="nav-item ml-auto" sec:authorize="isAuthenticated()">
+                    <a class="nav-link" th:href="@{/pnwAdventures/createAdventure}">Plan an Adventure</a>
+                </li>
+                <li class="nav-item ml-auto" sec:authorize="isAuthenticated()">
+                    <a class="nav-link" th:href="@{/pnwAdventures/summary}">My Adventures</a>
+                </li>
+<!--                <li class="nav-item ml-auto">-->
+<!--                      <a class="nav-link" href="#">Packing List Ideas</a>-->
+<!--                </li>-->
+                <li class="nav-item ml-auto" sec:authorize ="hasRole('ROLE_ADMIN')">
+                    <a class="nav-link" th:href="@{/pnwAdventures/admin/dashboard}">Dashboard</a>
+                </li>
+                <li class="nav-item ml-auto" sec:authorize="isAuthenticated()">
+                    <form th:action="@{/pnwAdventures/logout}" method="post" id="logout-form">
+                        <a href="#" class="nav-link logout" onclick="document.getElementById('logout-form').submit();">Logout</a>
+                    </form>
+                </li>
+                <li class="nav-item ml-auto" sec:authorize="isAnonymous()">
+                    <a class="nav-link" th:href="@{/pnwAdventures/login}">Login</a>
+                </li>
+                <li class="nav-item ml-auto" sec:authorize="isAnonymous()">
+                    <a class="nav-link" th:href="@{/pnwAdventures/register}">Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<footer th:fragment="footer" class="footer text-white text-decoration-none">
+    <p class="text-center copyright-text">© PNW Adventures - 2021</p>
+
+    <script th:src="@{/js/javascript.js}"></script>
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</footer>
+</body>
+</html>

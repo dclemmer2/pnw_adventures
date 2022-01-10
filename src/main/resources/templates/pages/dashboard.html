@@ -1,0 +1,78 @@
+<!--
+    Admin dashboard page.
+
+    Author: Dana Clemmer
+    File: dashboard.html
+    Date: 11/23/2021
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/parts :: meta('Dashboard')"></head>
+
+<body class="text-white">
+<header th:replace="fragments/parts :: navbar"></header>
+
+<div class="dashBackground">
+    <div class="header">
+        <div class="jumbotronText text-center mx-auto">
+            <h1 class="title" id="dashTitle">Dashboard</h1>
+        </div>
+    </div>
+
+    <div class="content mx-auto mb-5 text-center">
+        <div class="container-fluid form-row pb-4">
+            <div class="form-group col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 fields">
+                    <div class="card-body">
+                        <h1><span class="fas fa-users"></span></h1>
+                        <br>
+                        <h2 th:text="${userCount}"></h2>
+                        <h3 th:if="${userCount}==1">User</h3>
+                        <h3 th:if="${userCount}>1">Users</h3>
+                        <br>
+                        <a href="/pnwAdventures/consumer">Consumer Data</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 fields">
+                    <div class="card-body">
+                        <h3 id="numRequestsSite"></h3>
+                        <h5>Total Requests to the Website</h5><br>
+                        <h3 id="numRequestsAdvApi">0</h3>
+                        <h5>Total Requests to the Adventure API</h5><br>
+                        <h3 id="sessions">0</h3>
+                        <h5>Total Current Active Sessions</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 fields">
+                    <div class="card-body">
+                        <h3 id="timezone"></h3>
+                        <h5>User Timezone</h5><br>
+                        <h3 id="country"></h3>
+                        <h5>User Country</h5><br>
+                        <h3 id="os"></h3>
+                        <h5>User Operating System</h5>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 fields">
+                    <div class="card-body">
+                        <h3 id="port"></h3>
+                        <h5>Local Server Port</h5><br>
+                        <h3 id="bufferMem"></h3>
+                        <h5>Buffer Memory Used by the JVM</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer th:replace="fragments/parts :: footer"></footer>
+</div>
+<script src="/js/dashboardScript.js"></script>
+</body>
+</html>

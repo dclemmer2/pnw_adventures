@@ -1,0 +1,77 @@
+<!--
+    Form page of site for adding and updating adventures.
+
+    Author: Dana Clemmer
+    File: form.html
+    Date: 10/29/2021
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/parts :: meta('Plan an Adventure')"></head>
+
+<body class="text-white">
+<header th:replace="fragments/parts :: navbar"></header>
+
+<div class="jumboPgs header">
+    <div class="jumbotronText text-center mx-auto">
+        <h1 class="title">Plan an Adventure</h1>
+    </div>
+</div>
+<br>
+
+<div class="form-content mx-auto mb-5">
+    <div class="form-row">
+        <div class="form-group col-lg-6 col-md-12 col-sm-12">
+            <form th:action="@{/pnwAdventures/form}" th:object="${adventure}" method="post">
+                <input class="d-none" th:field="*{adventureId}" th:value="*{adventureId}" readonly>
+                <label for="region"><h5 class="info">Region</h5></label>
+                <select class="form-control" name="region" id="region" onchange="populateState()" th:field="*{region}">
+                    <option value="select" selected>Please select...</option>
+                    <option th:value="${regions[0]}" th:text="${regions[0]}"></option>
+                    <option th:value="${regions[1]}" th:text="${regions[1]}"></option>
+                    <option th:value="${regions[2]}" th:text="${regions[2]}"></option>
+                    <option th:value="${regions[3]}" th:text="${regions[3]}"></option>
+                    <option th:value="${regions[4]}" th:text="${regions[4]}"></option>
+                    <option th:value="${regions[5]}" th:text="${regions[5]}"></option>
+                    <option th:value="${regions[6]}" th:text="${regions[6]}"></option>
+                </select>
+                <br>
+                <label class="pt-3" for="state"><h5 class="info d-inline">State&emsp;</h5></label>
+                <input class="rounded d-inline" type="text" name="state" id="state" placeholder="WA" th:field="*{state}"
+                       th:value="*{state}" readonly>
+                <br><br>
+                <label><h5 class="info">Select one or more of what you want to include on your trip:</h5></label><br>
+                <label><input type="checkbox" th:name="*{hikeIncluded}" th:value="*{hikeIncluded}"
+                              th:field="*{hikeIncluded}"
+                              th:checked="*{hikeIncluded} ? 'checked'"> Hike(s)</label><br>
+                <label><input type="checkbox" th:name="*{beachIncluded}" th:value="*{beachIncluded}"
+                              th:field="*{beachIncluded}"
+                              th:checked="*{beachIncluded} ? 'checked'"> Beach(es)</label><br>
+                <label><input type="checkbox" th:name="*{campIncluded}" th:value="*{campIncluded}"
+                              th:field="*{campIncluded}"
+                              th:checked="*{campIncluded} ? 'checked'"> Camping</label><br>
+                <label><input type="checkbox" th:name="*{waterfallIncluded}" th:value="*{waterfallIncluded}"
+                              th:field="*{waterfallIncluded}"
+                              th:checked="*{waterfallIncluded} ? 'checked'"> Waterfall(s)</label><br>
+                <br>
+                <label for="destination"><h5 class="info">Destination&emsp;</h5></label>
+                <input class="rounded form-control" type="text" name="destination" id="destination" placeholder="Greater Seattle Area"
+                       th:field="*{destination}" th:value="*{destination}">
+                <br><br>
+                <label for="itinerary"><h5 class="info">Itinerary</h5></label><br>
+                <textarea class="form-control" rows="5" id="itinerary" placeholder="Explore town, ..."
+                          th:field="*{itinerary}" th:value="*{itinerary}"></textarea>
+                <br>
+                <button class="mt-5 rounded border-0" id="formButton" th:text="${button}"></button>
+            </form>
+        </div>
+        <div class="form-group col-lg-6 col-md-5 col-sm-12">
+            <img class="rounded pb-3 float-right" id="mistyroad" th:src="@{/images/mistyroad.jpg}" alt="Adventure Map">
+        </div>
+    </div>
+</div>
+
+<footer th:replace="fragments/parts :: footer"></footer>
+
+</body>
+</html>

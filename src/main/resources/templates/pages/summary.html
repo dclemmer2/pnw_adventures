@@ -1,0 +1,84 @@
+<!--
+    Summary page of site.
+
+    Author: Dana Clemmer
+    File: summary.html
+    Date: 10/16/2021
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/parts :: meta('All Adventures')"></head>
+
+<body class="text-white">
+<header th:replace="fragments/parts :: navbar"></header>
+
+<div class="jumboPgs header">
+    <div class="jumbotronText text-center mx-auto">
+        <h1 class="title">My Adventures</h1>
+    </div>
+</div>
+
+<div class="summaryContent mx-auto">
+    <h3 class="text-center" id="intro1">All of your planned adventures through <span class="font-weight-bold"
+                                                                                     id="brand-name">PNW Adventures</span>
+        can be found right here.</h3>
+    <br>
+
+    <div class="mt-4 mb-5 pb-5" th:if="${adventures.size() == 0}">
+        <h5 class="text-center mt-5">You currently have no planned adventures.</h5>
+        <br>
+        <h5 class="text-center"><a class="text-decoration-none" id="linkToCreate"
+                                   th:href="@{/pnwAdventures/createAdventure}">&#171;Plan your first adventure&#187;</a></h5>
+    </div>
+    <div class="pb-5" th:if="${adventures.size() != 0}">
+        <div class="d-none container-fluid form-row pt-5" id="grid">
+            <div class="form-group col-xl-3 col-lg-4 col-md-6 col-sm-6" th:each="adventure : ${adventures}">
+                <div class="card h-100 adventures">
+                    <div class="card-body">
+                        <h3 class="text-center"><span th:text="${adventure.destination}"></span></h3>
+                        <hr class="bg-white">
+                        <p><span th:text="${adventure.region}"></span>, <span th:text="${adventure.state}"></span></p>
+                        <p id="itinerary"><b>Itinerary:</b> <br> <span
+                                th:text="${adventure.itinerary}"></span></p>
+                        <form class="text-center pt-5" th:action="@{'individual/'+${adventure.adventureId}}">
+                            <input id="adventureView" class="rounded-pill border-0" type="submit" value="View"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class="w-100" id="table">
+            <thead>
+            <tr id="tableHeaders">
+                <th id="destination">Destination</th>
+                <th class="text-center" id="tableRegions">Region</th>
+                <th class="text-center">State</th>
+                <th class="text-center">View</th>
+                <th class="text-center">Edit</th>
+                <th class="text-center">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="adventure : ${adventures}">
+                <td th:text="${adventure.destination}"></td>
+                <td class="text-center" th:text="${adventure.region}"></td>
+                <td class="text-center" th:text="${adventure.state}"></td>
+                <td class="text-center"><a class="tableLinks"
+                                           th:href="@{'individual/'+${adventure.adventureId}}">View</a>
+                <td class="text-center"><a class="tableLinks" th:href="@{'edit/'+${adventure.adventureId}}">Edit</a>
+                <td class="text-center"><a class="tableLinks" th:href="@{'delete/'+${adventure.adventureId}}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <div class="text-center">
+            <a class="text-decoration-none" id="switchView" href="#"><b>&#171;Switch Adventure Display&#187;</b></a>
+        </div>
+
+    </div>
+    <footer id="summaryFooter" th:insert="fragments/parts :: footer"></footer>
+</div>
+</body>
+</html>

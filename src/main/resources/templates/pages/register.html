@@ -1,0 +1,78 @@
+<!--
+    Register form page of site.
+
+    Author: Dana Clemmer
+    File: register.html
+    Date: 11/27/2021
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/parts :: meta('Register')"></head>
+
+<body class="text-white">
+<header th:replace="fragments/parts :: navbar"></header>
+
+<div class="background" id="registerBackground">
+    <div class="header" id="formJumbo">
+        <div class="jumbotronText text-center mx-auto">
+            <h1 id="formTitle">Register</h1>
+        </div>
+    </div>
+
+    <div class="register-content mx-auto mb-5 rounded">
+        <form th:action="@{/pnwAdventures/registerAccount}" th:object="${user}" method="post">
+                <input class="d-none" th:field="*{userId}" th:value="*{userId}" readonly>
+            <div class="regDiv">
+                <label for="first"><h5 class="info">First Name <span class="flag" id="firstRequired">*</span></h5>
+                </label>
+                <input type="text" class="form-control formInput" th:field="*{firstName}" th:value="*{firstName}" id="first"
+                       placeholder="First name" oninput="firstRequired()">
+            </div>
+            <br>
+            <div class="formDiv">
+                <label for="last"><h5 class="info">Last Name <span class="flag" id="lastRequired">*</span></h5></label>
+                <input type="text" class="form-control formInput" th:field="*{lastName}" th:value="*{lastName}" id="last"
+                       placeholder="Last name" oninput="lastRequired()">
+            </div>
+            <br>
+            <div class="formDiv">
+                <label for="username"><h5 class="info">Username <span class="flag" id="userRequired">*</span></h5>
+                </label>
+                <input type="text" class="form-control formInput" th:field="*{username}" th:value="*{username}" id="username"
+                       placeholder="Username" oninput="userRequired()">
+            </div>
+            <br>
+            <div class="formDiv">
+                <label for="pass"><h5 class="info">Password <span class="flag" id="passRequired">*</span></h5></label>
+                <input type="password" class="form-control formInput" th:field="*{password}" th:value="*{password}" id="pass"
+                       placeholder="Password" oninput="passRequired()">
+            </div>
+            <br>
+            <div class="formDiv">
+                <label for="city"><h5 class="info">City</h5></label>
+                <input type="text" class="form-control formInput" th:field="*{city}" th:value="*{city}" id="city"
+                       placeholder="City">
+            </div>
+            <br>
+            <div class="formDiv">
+                <label for="state"><h5 class="info">State</h5></label>
+                <input type="text" class="form-control formInput" th:field="*{state}" th:value="*{state}" id="state"
+                       placeholder="State">
+            </div>
+            <br>
+            <div class="mx-auto text-center">
+                <button class="mt-5 rounded border-0" id="registerButton">Register</button>
+            </div>
+            <br>
+            <div class="mx-auto text-center">
+                <p id="signup">Already have an account? <a class="text-decoration-none" th:href="@{/pnwAdventures/login}"
+                                                         id="signuplink">Login</a></p>
+            </div>
+        </form>
+    </div>
+
+<footer id="registerFooter" th:insert="fragments/parts :: footer"></footer>
+
+</div>
+</body>
+</html>
